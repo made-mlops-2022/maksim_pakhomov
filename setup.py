@@ -1,5 +1,7 @@
 from setuptools import find_packages, setup
 
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
 
 setup(
     name="ml",
@@ -12,6 +14,6 @@ setup(
             "ml_train = ml.train_pipeline:train_pipeline_func"
         ]
     },
-    #install_requires=required,
+    install_requires=required,
     license="MIT",
 )
