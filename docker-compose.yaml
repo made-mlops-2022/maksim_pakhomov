@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  ml:
+    build: .
+    depends_on:
+      - mlflow
+    volumes:
+      - ./data/:/data/
+    links:
+      - mlflow:mlflow
+    command: "ml_train configs/train_config.yaml"
+  mlflow:
+    build: mlflow/
+    ports:
+      - "5001:5001"
