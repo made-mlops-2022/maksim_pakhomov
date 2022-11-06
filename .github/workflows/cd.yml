@@ -2,9 +2,8 @@ name: CD
 
 on:
   push:
-    branches: ["homework1"]
-    #tags:
-    #  - '*'
+    tags:
+      - '*'
 
 jobs:
   deploy:
