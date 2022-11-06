@@ -1,13 +1,14 @@
 input_data_path: "data/heart_cleveland_upload.csv"
 output_model_path: "artifacts/model.pkl"
 metric_path: "artifacts/metrics.json"
+use_mlflow: true
 mlflow_uri: "http://172.22.0.2:5001"
 splitting_params:
-  val_size: 0.2
-  random_state: 3
+  val_size: 0.1
+  random_state: 395
 model_params:
-  model_type: "XGBoost"
-  random_state: 255
+  model_type: "RandomForest"
+  random_state: 389
 feature_params:
   categorical_features:
     - "sex"
