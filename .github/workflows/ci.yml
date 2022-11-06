@@ -35,7 +35,7 @@ jobs:
         run: |
             python -m pip install --upgrade pip
             python -m pip install flake8 pytest
-            if [ -f ml_project/requirements.txt ]; then pip install -r requirements.txt; fi
+            if [ -f ml_project/requirements.txt ]; then pip install -r ml_project/requirements.txt; fi
             if [ -d "ml_project/ml" ]; then cd ml_project && python -m pip install -e .; fi
       - name: Lint with flake8
         run: |
@@ -45,4 +45,4 @@ jobs:
             flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: |
-            if [ -d "ml_project/tests" ]; then pytest tests; fi
+            if [ -d "ml_project/tests" ]; then pytest ml_project/tests; fi
